@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/dotnet/sdk:10.0-alpine",
   
   // Added tar, unzip, zip, nodejs, and npm to support Treesitter and Mason formatters
-  "onCreateCommand": "apk update && apk add --no-cache git bash neovim curl openssh ripgrep build-base fzf tar unzip zip nodejs npm && ssh-keygen -A",
+  "onCreateCommand": "apk update && apk add --no-cache git bash neovim curl openssh ripgrep build-base fzf tar unzip zip nodejs npm coreutils wget gzip python3 libc6-compat gcompat && ssh-keygen -A",
 
   "postCreateCommand": "git clone https://github.com/FelixSiegel/dotfiles.git ~/dotfiles && mkdir -p ~/.config && cp -r ~/dotfiles/.config/nvim ~/.config/nvim",
 
