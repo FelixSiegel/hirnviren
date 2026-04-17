@@ -1,0 +1,8 @@
+{
+  "name": "Minimal C# 10 Codespace (Alpine)",
+  "image": "mcr.microsoft.com/dotnet/sdk:10.0-alpine",
+  
+  "onCreateCommand": "apk update && apk add --no-cache git bash neovim curl openssh ripgrep build-base fzf",
+
+  "postCreateCommand": "git clone https://github.com/FelixSiegel/dotfiles.git ~/dotfiles && mkdir -p ~/.config && cp -r ~/dotfiles/.config/nvim ~/.config/nvim"
+}
