@@ -1,6 +1,6 @@
 {
-  "name": "Minimal C# 10 (Debian Slim)",
-  "image": "mcr.microsoft.com/dotnet/sdk:10.0-bookworm-slim",
+  "name": "C# 10 Dev Container (Ubuntu)",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:10.0-noble",
   
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
@@ -8,9 +8,9 @@
     }
   },
   
-  "onCreateCommand": "apt-get update && apt-get install -y neovim curl ripgrep build-essential fzf nodejs npm python3 openssh-server",
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y neovim curl ripgrep fzf python3 openssh-server",
 
   "postCreateCommand": "git clone https://github.com/FelixSiegel/dotfiles.git ~/dotfiles && mkdir -p ~/.config && cp -r ~/dotfiles/.config/nvim ~/.config/nvim",
 
-  "postStartCommand": "service ssh start"
+  "postStartCommand": "sudo service ssh start"
 }
