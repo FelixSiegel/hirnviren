@@ -5,6 +5,10 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
         "version": "latest"
+    },
+    // npm
+    "ghcr.io/devcontainers/features/node:1": {
+        "version": "lts"
     }
   },
   
