@@ -1,5 +1,5 @@
 {
-  "name": "C# 10 Dev Container (Ubuntu)",
+  "name": "C# 10 Dev Container (Ubuntu + NVIM 0.11)",
   "image": "mcr.microsoft.com/devcontainers/dotnet:10.0-noble",
   
   "features": {
@@ -8,7 +8,7 @@
     }
   },
   
-  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y neovim curl ripgrep fzf python3 openssh-server",
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y curl ripgrep fzf python3 openssh-server && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz && sudo rm -rf /opt/nvim-linux-x86_64 && sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz && export PATH=\"$PATH:/opt/nvim-linux-x86_64/bin\"",
 
   "postCreateCommand": "git clone https://github.com/FelixSiegel/dotfiles.git ~/dotfiles && mkdir -p ~/.config && cp -r ~/dotfiles/.config/nvim ~/.config/nvim",
 
