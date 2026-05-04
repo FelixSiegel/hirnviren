@@ -216,7 +216,30 @@ public class CelestialBody
         s += $", Full type: {FullType}";
         return s;
     }
+
+    public static bool operator ==(CelestialBody? left, CelestialBody? right)
+    {
+        if (ReferenceEquals(left, right)) return true; // reference to the same object
+        if (left is null || right is null) return false;
+        return left.Name == right.Name;
+    }
+
+    public static bool operator !=(CelestialBody? left, CelestialBody? right)
+    {
+        return !(left == right); // just flip the equal method lol
+    }
+
+    // Overriding equal operator requires overriding Equals and GetHashCode method as well
+    public override bool Equals(object? obj)
+    {
+        // The cast will either cast to CelestialBody or null
+        // then we just use the defined equal operator from above (which handles null values)
+        return this == obj as CelestialBody;
+    }
+
+    public override int GetHashCode() => Name.GetHashCode();
 }
+
 
 public enum BodyType { Star, Planet, Moon }
 public enum SpectralClass { O, B, A, F, G, K, M }
