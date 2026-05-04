@@ -147,13 +147,20 @@ class Program
 
 public class CelestialBody
 {
+    // Required properties
     public string Name { get; set; }
     public uint CatalogNumber { get; set; }
     public BodyType Type { get; set; }
+
+    // Optional (nullable) properties
     public SpectralClass? StarClass { get; set; }
     public float? ApparentMagnitude { get; set; }
     public float? OrbitalPeriod { get; set; }
     public uint? ParentBodyId { get; set; }
+
+    // Read-only properties
+    public float? OribitalPeriodInDays => OrbitalPeriod.HasValue ? OrbitalPeriod.Value * 356.25f : null;
+    public string FullType => StarClass.HasValue ? $"Star ({StarClass}-Class)" : $"{Type}";
 
     public CelestialBody(string name, uint catalogNumber, BodyType type,
         SpectralClass? starClass = null, float? magnitude = null,
@@ -202,6 +209,11 @@ public class CelestialBody
         {
             s += $"Umlaufzeit: {OrbitalPeriod} Erdjahre, Zentralkörper-Katalog-Nummer: {ParentBodyId}";
         }
+        if (OribitalPeriodInDays.HasValue)
+        {
+            s += $", Orbital period: {OribitalPeriodInDays.Value} days";
+        }
+        s += $", Full type: {FullType}";
         return s;
     }
 }
