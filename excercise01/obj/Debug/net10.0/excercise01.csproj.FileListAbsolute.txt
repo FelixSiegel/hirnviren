@@ -1,0 +1,15 @@
+/workspaces/hirnviren/excercise01/bin/Debug/net10.0/excercise01
+/workspaces/hirnviren/excercise01/bin/Debug/net10.0/excercise01.deps.json
+/workspaces/hirnviren/excercise01/bin/Debug/net10.0/excercise01.runtimeconfig.json
+/workspaces/hirnviren/excercise01/bin/Debug/net10.0/excercise01.dll
+/workspaces/hirnviren/excercise01/bin/Debug/net10.0/excercise01.pdb
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.AssemblyInfoInputs.cache
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.AssemblyInfo.cs
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.csproj.CoreCompileInputs.cache
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.sourcelink.json
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.dll
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/refint/excercise01.dll
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.pdb
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/excercise01.genruntimeconfig.cache
+/workspaces/hirnviren/excercise01/obj/Debug/net10.0/ref/excercise01.dll
