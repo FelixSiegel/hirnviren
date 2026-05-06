@@ -33,7 +33,7 @@ class Program
 public class CelestialBody
 {
     // Required properties
-    public string Name { get; set; }
+    public string Name { get; set => field = value.Trim(); }
     public uint CatalogNumber { get; set; }
     public BodyType Type { get; set; }
 
@@ -48,8 +48,11 @@ public class CelestialBody
         // check if user is stupid
         if (!(10000 <= catalogNumber && catalogNumber < 100000)) { throw new Exception("Winkler?? 5 stellig ist doch im Normalfall 10-tausender Bereich!?"); }
         if (magnitude < 0) { throw new Exception("Was bitte ist eine negative Helligkeit??!"); }
-        if (typ == BodyType.Planet || typ == BodyType.Moon && period < 0) { throw new Exception($"Der kann {typ} kann sich nicht rückwärts drehen junge!"); }
-
+        if (typ == BodyType.Planet || typ == BodyType.Moon)
+        {
+            if (period < 0) { throw new Exception($"Der {typ} kann sich nicht rückwärts drehen junge!"); }
+            if (!(10000 <= id && id < 100000)) { throw new Exception("Winkler?? 5 stellig ist doch im Normalfall 10-tausender Bereich!?"); }
+        }
         Name = name;
         CatalogNumber = catalogNumber;
         Type = typ;
