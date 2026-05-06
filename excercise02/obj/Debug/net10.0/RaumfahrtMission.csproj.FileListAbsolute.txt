@@ -1,0 +1,15 @@
+/workspaces/hirnviren/excercise02/bin/Debug/net10.0/RaumfahrtMission
+/workspaces/hirnviren/excercise02/bin/Debug/net10.0/RaumfahrtMission.deps.json
+/workspaces/hirnviren/excercise02/bin/Debug/net10.0/RaumfahrtMission.runtimeconfig.json
+/workspaces/hirnviren/excercise02/bin/Debug/net10.0/RaumfahrtMission.dll
+/workspaces/hirnviren/excercise02/bin/Debug/net10.0/RaumfahrtMission.pdb
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.AssemblyInfoInputs.cache
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.AssemblyInfo.cs
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.csproj.CoreCompileInputs.cache
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.sourcelink.json
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.dll
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/refint/RaumfahrtMission.dll
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.pdb
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/RaumfahrtMission.genruntimeconfig.cache
+/workspaces/hirnviren/excercise02/obj/Debug/net10.0/ref/RaumfahrtMission.dll
