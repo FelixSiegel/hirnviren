@@ -77,3 +77,33 @@ public class Moon : Planet
 
     public override string ToString() => $"Moon -> {base.ToString()}";
 }
+
+public class OrbitalData
+{
+    public CelestialBody CelestialBody { get; init; }
+    public double OrbitalPeriod { get; init; }
+    public double SemiMajorAxis { get; init; }
+    public double Eccentricity { get; init; }
+
+    public OrbitalData(CelestialBody celestialBody, double orbitalPeriod, double semiMajorAxis, double eccentricity)
+    {
+        if (orbitalPeriod <= 0)
+            throw new ArgumentException("OrbitalPeriod must be positive.");
+        if (semiMajorAxis <= 0)
+            throw new ArgumentException("SemiMajorAxis must be positive.");
+        if (eccentricity < 0 || eccentricity >= 1)
+            throw new ArgumentException("Eccentricity must be in the range [0, 1).");
+
+        CelestialBody = celestialBody ?? throw new ArgumentNullException(nameof(celestialBody));
+        OrbitalPeriod = orbitalPeriod;
+        SemiMajorAxis = semiMajorAxis;
+        Eccentricity = eccentricity;
+    }
+
+    public override string ToString()
+        => $"OrbitalData -> Body: {CelestialBody.Name}, OrbitalPeriod: {OrbitalPeriod} years, SemiMajorAxis: {SemiMajorAxis} AU, Eccentricity: {Eccentricity:F4}";
+
+    public override int GetHashCode()
+        => HashCode.Combine(CelestialBody, OrbitalPeriod, SemiMajorAxis, Eccentricity);
+
+}
