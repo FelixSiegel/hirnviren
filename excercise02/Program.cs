@@ -43,3 +43,11 @@ Console.WriteLine("\n--- Orbital Data ---");
 Console.WriteLine(earthOrbit);
 Console.WriteLine(moonOrbit);
 Console.WriteLine(halleyOrbit);
+
+// Memory Visualization Tests
+Console.WriteLine("\n\n=== Memory Visualization Tests ===");
+MemoryVisualizer.VisualizeMemory(sun, earth, earthOrbit);
+
+// Optional: Unsafe Memory Content
+Console.WriteLine("\n=== Unsafe Memory Content ===");
+MemoryVisualizer.ShowMemoryContentUnsafe(earthOrbit.OrbitalPeriod);
