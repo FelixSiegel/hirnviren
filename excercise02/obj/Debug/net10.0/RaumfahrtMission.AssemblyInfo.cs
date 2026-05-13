@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RaumfahrtMission")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98bd36f743922de1c22f49000aa6c6b1bdf5c55d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b4b97535b67dec664989f34724a0adabf25b367")]
 [assembly: System.Reflection.AssemblyProductAttribute("RaumfahrtMission")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RaumfahrtMission")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
