@@ -51,3 +51,8 @@ MemoryVisualizer.VisualizeMemory(sun, earth, earthOrbit);
 // Optional: Unsafe Memory Content
 Console.WriteLine("\n=== Unsafe Memory Content ===");
 MemoryVisualizer.ShowMemoryContentUnsafe(earthOrbit.OrbitalPeriod);
+
+// ASCII Orbit Drawing
+Console.WriteLine("\n=== ASCII Orbit Drawing ===");
+var visualizer = new BahnVisualisierer();
+visualizer.DrawOrbitAscii(earthOrbit, width: 80, height: 30);
