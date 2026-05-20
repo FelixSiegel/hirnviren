@@ -1,9 +1,11 @@
 namespace CampusLendingSystem;
 
-public abstract class LoanItem : ICampusItem, IComparableCustom<LoanItem>
+public abstract class LoanItem : ICampusItem, IComparableCustom<LoanItem>, IBorrowable
 {
     public string Name { get; }
     public uint InventoryNumber { get; }
+
+    public bool IsAvailable { get; set; } = true;
 
     protected LoanItem(string name, uint inventoryNumber)
     {
@@ -27,6 +29,24 @@ public abstract class LoanItem : ICampusItem, IComparableCustom<LoanItem>
     {
         return CompareWith(otherItem) < 0;
     }
+
+    public void Borrow()
+    {
+        if (!IsAvailable)
+        {
+            throw new InvalidOperationException($"{Name} (InventoryNumber: {InventoryNumber}) is already borrowed.");
+        }
+        IsAvailable = false;
+    }
+
+    public void Return()
+    {
+        if (IsAvailable)
+        {
+            throw new InvalidOperationException($"{Name} (InventoryNumber: {InventoryNumber}) is not currently borrowed.");
+        }
+        IsAvailable = true;
+    }
 }
 
 public class Laptop : LoanItem
@@ -40,7 +60,7 @@ public class Laptop : LoanItem
 
     public override string GetStatusReport()
     {
-        return $"Laptop {Name} in {RoomNumber} (InventoryNumber: {InventoryNumber}) is available.";
+        return $"Laptop {Name} in {RoomNumber} (InventoryNumber: {InventoryNumber}) is {(IsAvailable ? "available" : "not available")}";
     }
 }
 
@@ -55,6 +75,6 @@ public class Book : LoanItem
 
     public override string GetStatusReport()
     {
-        return $"Book {Name} by {Author} (InventoryNumber: {InventoryNumber}) is available.";
+        return $"Book {Name} by {Author} (InventoryNumber: {InventoryNumber}) is {(IsAvailable ? "available" : "not available")}";
     }
 }
