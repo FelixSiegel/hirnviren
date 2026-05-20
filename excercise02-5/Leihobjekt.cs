@@ -1,59 +1,60 @@
-using CampusLeihsystem;
+namespace CampusLendingSystem;
 
-public abstract class Leihobjekt : ICampusObjekt, IVergleichbar<Leihobjekt>
+public abstract class LoanItem : ICampusItem, IComparableCustom<LoanItem>
 {
     public string Name { get; }
-    public uint InventarNummer { get; }
+    public uint InventoryNumber { get; }
 
-    protected Leihobjekt(string name, uint inventarNummer)
+    protected LoanItem(string name, uint inventoryNumber)
     {
         Name = name;
-        InventarNummer = inventarNummer;
-    }
-    public abstract string GetStatusBericht();
-
-    public int VergleicheMit(Leihobjekt anderesObjekt)
-    {
-        return InventarNummer.CompareTo(anderesObjekt.InventarNummer);
+        InventoryNumber = inventoryNumber;
     }
 
-    public bool IstGroesserAls(Leihobjekt anderesObjekt)
+    public abstract string GetStatusReport();
+
+    public int CompareWith(LoanItem otherItem)
     {
-        return VergleicheMit(anderesObjekt) > 0;
+        return InventoryNumber.CompareTo(otherItem.InventoryNumber);
     }
 
-    public bool IstKleinerAls(Leihobjekt anderesObjekt)
+    public bool IsGreaterThan(LoanItem otherItem)
     {
-        return VergleicheMit(anderesObjekt) < 0;
-    }
-}
-
-public class Laptop : Leihobjekt
-{
-    public string RaumNummer { get; }
-
-    public Laptop(string name, uint inventarNummer, string raumNummer) : base(name, inventarNummer)
-    {
-        RaumNummer = raumNummer;
+        return CompareWith(otherItem) > 0;
     }
 
-    public override string GetStatusBericht()
+    public bool IsLessThan(LoanItem otherItem)
     {
-        return $"Laptop {Name} in {RaumNummer} (InventarNummer: {InventarNummer}) ist verfügbar.";
+        return CompareWith(otherItem) < 0;
     }
 }
 
-public class Buch : Leihobjekt
+public class Laptop : LoanItem
 {
-    public string Autor { get; }
+    public string RoomNumber { get; }
 
-    public Buch(string name, uint inventarNummer, string autor) : base(name, inventarNummer)
+    public Laptop(string name, uint inventoryNumber, string roomNumber) : base(name, inventoryNumber)
     {
-        Autor = autor;
+        RoomNumber = roomNumber;
     }
 
-    public override string GetStatusBericht()
+    public override string GetStatusReport()
     {
-        return $"Buch {Name} von {Autor} (InventarNummer: {InventarNummer}) ist verfügbar.";
+        return $"Laptop {Name} in {RoomNumber} (InventoryNumber: {InventoryNumber}) is available.";
+    }
+}
+
+public class Book : LoanItem
+{
+    public string Author { get; }
+
+    public Book(string name, uint inventoryNumber, string author) : base(name, inventoryNumber)
+    {
+        Author = author;
+    }
+
+    public override string GetStatusReport()
+    {
+        return $"Book {Name} by {Author} (InventoryNumber: {InventoryNumber}) is available.";
     }
 }

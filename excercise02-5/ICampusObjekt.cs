@@ -1,8 +1,8 @@
-namespace CampusLeihsystem;
+namespace CampusLendingSystem;
 
-public interface ICampusObjekt
+public interface ICampusItem
 {
     string Name { get; }
-    uint InventarNummer { get; }
-    string GetStatusBericht();
+    uint InventoryNumber { get; }
+    string GetStatusReport();
 }

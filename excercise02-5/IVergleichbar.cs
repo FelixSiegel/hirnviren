@@ -1,8 +1,8 @@
-namespace CampusLeihsystem;
+namespace CampusLendingSystem;
 
-public interface IVergleichbar<T>
+public interface IComparableCustom<T>
 {
-    int VergleicheMit(T anderer);
-    bool IstGroesserAls(T anderer);
-    bool IstKleinerAls(T anderer);
+    int CompareWith(T other);
+    bool IsGreaterThan(T other);
+    bool IsLessThan(T other);
 }
